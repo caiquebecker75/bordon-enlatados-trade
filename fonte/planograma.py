@@ -88,12 +88,12 @@ html = f'''
         <div class="anima d2">{pns}</div>
       </div>
       <ol class="gd-regras anima d3">
-        <li><b>Olhos para o jantar</b>Pratos prontos na prateleira dos olhos, onde a novidade é vista.</li>
-        <li><b>Mãos para o giro</b>Salsichas e almôndegas na altura das mãos.</li>
-        <li><b>Bloco vertical</b>A marca inteira junta, em bloco amarelo, do topo à base.</li>
-        <li><b>Faixa com a cor do manual</b>Cada item com a sua cor: o shopper acha pela cor antes de ler.</li>
-        <li><b>Nunca falta</b>Feijoada e salsicha com 4 frentes ou mais e reposição prioritária.</li>
-        <li><b>Preço por pessoa</b>No porta-preço, o valor da refeição dividido por quem come.</li>
+        <li><b>Olhos para o jantar</b>Pratos prontos na altura dos olhos.</li>
+        <li><b>Mãos nos mais vendidos</b>Salsichas e almôndegas ao alcance da mão.</li>
+        <li><b>Bloco vertical</b>A marca toda junta, do topo à base.</li>
+        <li><b>Faixa com a cor do produto</b>O shopper acha pela cor antes de ler.</li>
+        <li><b>Nunca falta</b>Feijoada e salsicha com 4 frentes ou mais.</li>
+        <li><b>Preço por pessoa</b>O valor da refeição dividido por quem come.</li>
       </ol>
     </div>
     <p class="fonte">Base: gerenciamento por categoria (ECR e The Partnering Group, 1995) e ativos distintivos de marca (Romaniuk, Building Distinctive Brand Assets, OUP, 2018). Gôndola em módulos de 1 m e prateleiras a cada 22 cm, desenhada em escala dentro de cada tamanho de loja; medidas de embalagem de referência, conferidas na visita às lojas.</p>

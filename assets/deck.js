@@ -26,7 +26,7 @@
   const grupos=$$('[data-abas]').map(g=>{
     const bts=$$('.aba',g),pns=$$('.painel',g);
     const st={g,bts,pns,i:0,timer:null,parado:false};
-    function mostra(i){st.i=i;bts.forEach((b,k)=>{b.classList.toggle('on',k===i);b.style.setProperty('--t','0s');b.classList.remove('corre');});pns.forEach((p,k)=>p.classList.toggle('on',k===i));
+    function mostra(i){st.i=i;g.dataset.on=i;bts.forEach((b,k)=>{b.classList.toggle('on',k===i);b.style.setProperty('--t','0s');b.classList.remove('corre');});pns.forEach((p,k)=>p.classList.toggle('on',k===i));
       pns[i]&&pns[i].querySelectorAll('[data-conta]').forEach(contar);}
     st.mostra=mostra;
     st.agenda=function(){clearTimeout(st.timer);if(st.parado||modoPdf)return;
@@ -45,8 +45,16 @@
   window.__pdfEstados=function(){const t=telas[atual];const st=grupos.find(s=>t.contains(s.g));return st?st.bts.length:0;};
   window.__pdfEstado=function(k){const t=telas[atual];grupos.filter(s=>t.contains(s.g)).forEach(st=>{st.para();st.mostra(Math.min(k,st.bts.length-1));});};
 
+  const wipe=$('#wipe');let trocando=false;
   function ir(n){
-    n=Math.max(0,Math.min(total-1,n));if(n===atual)return;
+    n=Math.max(0,Math.min(total-1,n));if(n===atual||trocando)return;
+    if(atual<0||modoPdf||html.classList.contains('cel')||matchMedia('(prefers-reduced-motion:reduce)').matches){troca(n);return;}
+    trocando=true;const cap=telas[n].classList.contains('cap');
+    wipe.classList.remove('vai','capitulo');void wipe.offsetWidth;wipe.classList.toggle('capitulo',cap);wipe.classList.add('vai');stage.classList.add('cine');
+    setTimeout(()=>{troca(n);},cap?520:380);
+    setTimeout(()=>{wipe.classList.remove('vai');stage.classList.remove('cine');trocando=false;},cap?1150:860);
+  }
+  function troca(n){
     const ant=atual>=0?telas[atual]:null;
     if(ant){ant.classList.remove('ativa');ant.classList.add('saindo');setTimeout(()=>ant.classList.remove('saindo'),700);}
     atual=n;const t=telas[n];t.classList.add('ativa');

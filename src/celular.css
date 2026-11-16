@@ -81,3 +81,26 @@ html.cel,html.cel body{height:auto;overflow-x:hidden;overflow-y:auto;background:
 .cel #sumario{display:none}
 .cel body,.cel #wrap{overflow-x:hidden}
 .cel .botao{font-size:14px;min-height:44px}
+.cel .rc-g,.cel .pq-g,.cel .in-g,.cel .mp-g{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+.cel .in-frase{font-size:34px!important}.cel .in-aspas{font-size:120px;height:50px}
+.cel .in-x,.cel .in-seta,.cel .mp-setas{display:none}
+.cel .rc-g li{min-height:0}
+.cel .mp-amb{min-height:0}
+.cel .gt{display:block;overflow:hidden}
+.cel .gt-l{grid-template-columns:1fr!important;width:auto;padding:6px 0}
+.cel .gt-cab{display:none}
+.cel .gt-r span{font-size:14px}
+.cel .gt-t{height:18px}
+.cel .gt-marcos .gt-t{display:flex;flex-wrap:wrap;gap:8px;height:auto}
+.cel .gt-m b{font-size:14px;white-space:normal}
+.cel .in-job b{font-size:14px}
+.cel .rc-grade{display:grid;grid-template-columns:160px repeat(6,90px);overflow-x:auto}
+.cel .tela .gt,.cel .tela .rc-grade{max-width:100%}
+.cel .gt *, .cel .rc-grade *{max-width:none}
+.cel .ca-linha,.cel .ca-anos{width:100%}
+.cel .rc-topo,.cel .mp-topo{display:block}
+.cel .rc-leg{flex-wrap:wrap}
+.cel .rc-grade{overflow-x:auto;grid-template-columns:130px repeat(6,74px)}
+.cel .aba.rc-p{font-size:12px;padding:8px 4px;letter-spacing:0}
+.cel .rc-a{font-size:15px}
+.cel #wipe,.cel #faixas{display:none}
