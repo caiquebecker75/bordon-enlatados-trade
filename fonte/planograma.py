@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Gera src/t16-gondola.html: planograma por tamanho de loja (P, M, G) com a foto real de cada item repetida por frente,
+# Gera src/s10-gondola.html: planograma por tamanho de loja (P, M, G) com a foto real de cada item repetida por frente,
 # em proporção (mesma escala nos três). Medidas de embalagem de referência, conferidas na visita às lojas.
 import pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
@@ -28,7 +28,7 @@ P = {
 }
 COR = {'feijoada':'#5E2650','carne-panela':'#E06A00','costela':'#C98A00','bolonhesa':'#B23A1F','desfiada':'#8A3A1E','maionese':'#D9A400','salsicha':'#B04D5B','salsicha-molho':'#50284F','aperitivo':'#359D9B','almondegas':'#81332E','carne-bovina':'#26213F','carne-conserva':'#0050B6','fiambre':'#009ADF','cubos':'#FC4A14','feijoada-cl':'#5E2650','carioca':'#DE271F','preto':'#6B3529'}
 PRATS = ['Jantar pronto', 'Lanche e petisco', 'Carne e frios', 'Despensa']
-ESC = {'P': 5.4, 'M': 5.0, 'G': 3.4}
+ESC = {'P': 4.5, 'M': 4.5, 'G': 3.4}
 LOJAS = {
   'P': (1, 'Vizinhança · 1 módulo', [
       [('feijoada', 4), ('carne-panela', 3), ('costela', 3)],
@@ -79,14 +79,15 @@ for k, (mods, rot, prats) in LOJAS.items():
 
 html = f'''
   <!-- 16 · gôndola -->
-  <section class="tela claro gondola" data-titulo="Gôndola e sortimento" data-capitulo="03 · Como">
-    <div class="marcas"><div class="par"><img class="bd" src="assets/img/logo-bordon.png" alt="Logo Bordon"><span class="x">×</span><img class="lab" src="assets/logos/logo-preto.png" alt="Logo 75 LAB"></div><span class="eyebrow"><b>(03)</b> Gôndola</span></div>
+  <section class="tela claro gondola" data-parte="4" data-titulo="Gôndola e sortimento" data-capitulo="4 · Como">
+    <div class="marcas"><div class="par"><img class="bd" src="assets/img/logo-bordon.png" alt="Logo Bordon"><span class="x">×</span><img class="lab" src="assets/logos/logo-preto.png" alt="Logo 75 LAB"></div></div>
     <div class="miolo gd-g">
       <div class="gd-esq" data-abas>
         <div class="gd-topo"><h2 class="anima">A parede amarela, <em>organizada por ocasião.</em></h2><span class="clique anima d1"><svg><use href="#i-mao"/></svg>Clique no tamanho da loja</span></div>
         <div class="abas-bts anima d1">{bts}</div>
         <div class="anima d2">{pns}</div>
       </div>
+      <div class="gd-dir">
       <ol class="gd-regras anima d3">
         <li><b>Olhos para o jantar</b>Pratos prontos na altura dos olhos.</li>
         <li><b>Mãos nos mais vendidos</b>Salsichas e almôndegas ao alcance da mão.</li>
@@ -95,10 +96,12 @@ html = f'''
         <li><b>Nunca falta</b>Feijoada e salsicha com 4 frentes ou mais.</li>
         <li><b>Preço por pessoa</b>O valor da refeição dividido por quem come.</li>
       </ol>
+      <p class="teoria anima d5"><svg class="ico"><use href="#i-livro"/></svg><span><b>Teoria</b> ECR, 1995, gerenciamento por categoria: o varejo dá um papel a cada linha. Conservas são rotina, pratos prontos são conveniência.</span></p>
+      </div>
     </div>
     <p class="fonte">Base: gerenciamento por categoria (ECR e The Partnering Group, 1995) e ativos distintivos de marca (Romaniuk, Building Distinctive Brand Assets, OUP, 2018). Gôndola em módulos de 1 m e prateleiras a cada 22 cm, desenhada em escala dentro de cada tamanho de loja; medidas de embalagem de referência, conferidas na visita às lojas.</p>
     <aside class="roteiro" hidden>Este é o planograma, igual ao que vai para a loja: cada lata é a foto real, repetida por frente, em proporção. São três tamanhos. Na loja P, de vizinhança, um módulo com os itens de giro. Na M, dois módulos e a linha quase toda. Na G, hiper e atacarejo, três módulos com a linha completa. A lógica é a mesma: a marca em bloco amarelo, organizada por ocasião. Pratos prontos na altura dos olhos, giro na altura das mãos, carnes e frios embaixo e a despensa na base. A faixa usa a cor de cada produto do manual, para o shopper achar pela cor, e o porta-preço mostra o preço por pessoa.</aside>
   </section>
 '''
-(R / 'src/t16-gondola.html').write_text(html)
+(R / 'src/s10-gondola.html').write_text(html)
 print('gôndola ok')

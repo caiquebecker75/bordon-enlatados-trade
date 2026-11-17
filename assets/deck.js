@@ -65,8 +65,9 @@
     $('#ant').disabled=n===0;$('#prox').disabled=n===total-1;
     html.dataset.fundo=t.classList.contains('escuro')||t.classList.contains('capa')||t.classList.contains('q-tema-escuro')||t.classList.contains('vermelho')?'escuro':(t.classList.contains('amarelo')?'amarelo':'claro');
     $$('#sumLista button').forEach(b=>b.classList.toggle('atual',+b.dataset.i===n));
-    history.replaceState(null,'','#'+(n+1));mostrarFala();
+    history.replaceState(null,'','#'+(n+1));mostrarFala();marcaFio(t);
   }
+  function marcaFio(t){const p=+(t.dataset.parte||0);$$('#fio li').forEach(li=>{const k=+li.dataset.p;li.classList.toggle('on',k===p);li.classList.toggle('feito',k<p);});$('#fio').classList.toggle('some',!p);}
   function entra(t){
     t.classList.remove('visivel');t.classList.add('ativa');
     t.querySelectorAll('[data-conta]').forEach(el=>{if(!el.closest('.painel'))contar(el);});

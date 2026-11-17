@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Gera src/t20-calendario.html: calendário de trade 2027 com 12 meses clicáveis (abas com temporizador).
+# Gera src/s13-calendario.html: calendário de trade 2027 com 12 meses clicáveis (abas com temporizador).
 # Datas móveis calculadas (Páscoa pelo cômputo gregoriano; Carnaval = Páscoa menos 47 dias; Mães e Pais = 2º domingo).
 import pathlib
 R = pathlib.Path(__file__).resolve().parent.parent
@@ -25,17 +25,18 @@ for m, tema, h, datas, prod, acao, canal in M:
 <dl class="cal-dl"><dt>Produtos em foco</dt><dd>{prod}</dd><dt>Na loja</dt><dd>{acao}</dd><dt>Canal em destaque</dt><dd>{canal}</dd></dl></div></div>'''
 html = f'''
   <!-- 20 · calendário 2027 -->
-  <section class="tela escuro calendario" data-titulo="Calendário 2027" data-capitulo="03 · Como">
-    <div class="marcas"><div class="par"><img class="bd" src="assets/img/logo-bordon.png" alt="Logo Bordon"><span class="x">×</span><img class="lab" src="assets/logos/logo-lime.png" alt="Logo 75 LAB"></div><span class="eyebrow"><b>(03)</b> Calendário</span></div>
+  <section class="tela escuro calendario" data-parte="4" data-titulo="Calendário 2027" data-capitulo="4 · Como">
+    <div class="marcas"><div class="par"><img class="bd" src="assets/img/logo-bordon.png" alt="Logo Bordon"><span class="x">×</span><img class="lab" src="assets/logos/logo-lime.png" alt="Logo 75 LAB"></div></div>
     <div class="miolo" data-abas>
       <div class="cal-topo"><h2 class="anima">Doze meses, <em>três picos de força.</em></h2><span class="clique anima d1"><svg><use href="#i-mao"/></svg>Clique em cada mês</span></div>
       <div class="cal-leg anima d1"><span><i style="--h:1"></i>manutenção</span><span><i style="--h:2"></i>ativação</span><span><i style="--h:3"></i>pico: ponto extra, degustação e encarte</span></div>
       <div class="abas-bts cal-bar anima d1">{barras}</div>
       <div class="anima d2">{pns}</div>
+      <p class="teoria anima d5"><svg class="ico"><use href="#i-livro"/></svg><span><b>Teoria</b> Romaniuk, 2023: cada data forte é um momento de compra. A Bordon aparece onde o shopper já está decidindo o que comer.</span></p>
     </div>
     <p class="fonte">Datas de 2027: Carnaval, Páscoa, Dia das Mães, Dia dos Pais e Black Friday calculados pelas regras de cada data; demais datas fixas. Picos em março (onda 1), maio e junho (onda 2, inverno e São João) e novembro (Black Friday).</p>
     <aside class="roteiro" hidden>O calendário de 2027 tem um tema por mês e três picos de força. Março, com a primeira onda no atacarejo e no hiper. Maio e junho, com a segunda onda, o Dia das Mães, o inverno e o São João, quando a feijoada e a costela com mandioca são protagonistas e o Nordeste ganha cross com cuscuz. E novembro, com a Black Friday, para abastecer a despensa por caixa. Nos outros meses, ativações menores ligadas a momentos: férias, carnaval com petisco, Dia dos Pais com sábado de feijoada e as cestas de fim de ano. Cliquem em cada mês para ver produto, ação e canal.</aside>
   </section>
 '''
-(R / 'src/t20-calendario.html').write_text(html)
+(R / 'src/s13-calendario.html').write_text(html)
 print('calendário ok')

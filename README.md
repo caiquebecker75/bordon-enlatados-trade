@@ -5,18 +5,19 @@ Apresentação em HTML da estratégia completa de trade marketing para os enlata
 - Apresentação: https://projetos.75lab.com.br/bordon-enlatados-trade/
 - PDF: `bordon-75lab-trade-2027.pdf` (capa com link e QR, uma página por botão)
 
-## Estrutura (31 telas, 4 capítulos)
-Abertura (dado, capa, 75 LAB, diferencial, resumo, oito recomendações) · 01 Para onde vamos · 02 Por que (mercado, pesquisa de compra, insight do consumidor, shopper, barreiras) ·
-03 Como (mapa da estratégia, plataforma e KV, pilares, canais, gôndola P/M/G, sistema de peças, 10 peças, ativação, calendário 2027, execução) ·
-04 O que teremos (medição One Shot e On Timing, cronograma de execução em Gantt, papéis RACI, resultados esperados, próximo passo).
-Transição de cinema entre telas (cortina amarela, faixas e zoom), ícones e infográficos animados.
+## Estrutura (v4, 17/11/2026: 15 telas, começo, meio e fim)
+Fio no topo: Objetivo → Por quê → A ideia → Como → Execução.
+1 Capa · 2 Quem é a 75 LAB · 3 O objetivo · 4 Por que agora · 5 Insight do consumidor · 6 O problema na loja ·
+7 A plataforma Ponto Pronto · 8 Mapa da estratégia · 9 Canais · 10 Gôndola · 11 Peças · 12 Ativação ·
+13 Calendário 2027 · 14 Execução (cronograma, quem faz, como medimos) · 15 Próximo passo.
+A teoria aparece como etiqueta "Teoria" dentro de cada tela, não em tela própria. As telas da v3 (34) estão em `fonte/v3/`.
 
 ## Como editar
-- Telas em `src/tNN-*.html`, estilos em `src/base.css`, `src/telas.css` e `src/celular.css`, navegação em `src/deck.js`.
-- Geradas por script: `fonte/capitulos.py` (capas), `fonte/planograma.py` (gôndola), `fonte/calendario.py` (calendário), `fonte/execucao.py` (Gantt e RACI). `fonte/enxugar.py` guarda a revisão enxuta de 16/11.
+- Telas em `src/sNN-*.html`, estilos em `src/base.css`, `src/telas.css` e `src/celular.css`, navegação em `src/deck.js`.
+- Geradas por script: `fonte/capitulos.py` (capas), `fonte/planograma.py` (gôndola), `fonte/calendario.py` (calendário), `fonte/execucao_v4.py` (tela de execução em abas). `fonte/enxugar.py` guarda a revisão enxuta de 16/11.
 - Montar: `python3 fonte/build.py` (gera `index.html`, `assets/deck.*`, `versao.txt` e confere travessão).
 - Prévia: `fonte/sincronizar.sh` e servidor local na porta 4783.
-- Conferências: `node fonte/miniaturas.mjs <base> <pasta>` (texto sobreposto ou fora da tela), `node fonte/celular.mjs <base> <saida.jpg>` (iPhone), `node fonte/fora.mjs`.
+- Conferências: `node fonte/sobreposicao.mjs <base> <pasta>` (texto sobre texto ao vivo, aba por aba); `node fonte/miniaturas.mjs <base> <pasta>` (texto sobreposto ou fora da tela), `node fonte/celular.mjs <base> <saida.jpg>` (iPhone), `node fonte/fora.mjs`.
 - PDF: `node fonte/gerar-pdf.mjs http://localhost:4783/ bordon-75lab-trade-2027.pdf`.
 - Teclas: setas navegam, M abre o sumário, N mostra o roteiro de fala.
 

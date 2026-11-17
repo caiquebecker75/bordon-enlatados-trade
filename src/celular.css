@@ -107,3 +107,6 @@ html.cel,html.cel body{height:auto;overflow-x:hidden;overflow-y:auto;background:
 .cel .matriz{grid-template-columns:1fr!important}
 .cel .q{padding-right:20px}.cel .q i{position:static;align-self:flex-start}
 .cel .q-prop .lado-b small,.cel .q-prop .q-eb,.cel .q-prop .txt cite,.cel .q-prop .txt em,.cel .q-dif .provas>div>span,.cel .q-dif .pilares-q p,.cel .q-num .grade>div>span,.cel .q-cli .cab-g span,.cel .te-aut,.cel .te-onde,.cel .pp-linha span,.cel .q span{font-size:14px;letter-spacing:.02em}
+.cel .b2-lado{flex-wrap:wrap}
+.cel .q-uma .q-logos .q-eb,.cel .ag-barras span,.cel .teoria.mini{font-size:14px}
+.cel .teoria.mini b{font-size:12px}
