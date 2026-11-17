@@ -691,3 +691,47 @@
 .matriz{margin-top:64px}
 .cel .mx-c{display:none!important}
 .mx-y{top:30px!important}
+
+/* ===== 05b recomendações v2: duas decisões por barreira ===== */
+.recomenda h2{font-size:60px}
+.rc-inicio{display:grid;grid-template-columns:44px auto 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center;margin-top:22px;background:var(--am);color:var(--ink);padding:14px 22px}
+.rc-inicio svg.ico{grid-row:1/3;width:40px;height:40px;color:var(--vm-2)}
+.rc-inicio .mono{grid-column:2;color:var(--vm-2);font-weight:700}
+.rc-inicio b{grid-column:2/4;font-family:var(--titulo);font-weight:900;font-size:30px;text-transform:uppercase;line-height:1}
+.rc-inicio-d{grid-column:3;grid-row:1;font-size:15px;text-align:right;opacity:.85}
+.rc-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+.rc-col{display:flex;flex-direction:column;gap:10px}
+.rc-cab{display:flex;gap:12px;align-items:center;padding-bottom:10px;border-bottom:3px solid var(--am)}
+.rc-cab svg.ico{width:40px;height:40px;color:var(--am)}
+.rc-cab .mono{color:var(--am);opacity:.85}
+.rc-cab b{display:block;font-family:var(--titulo);font-weight:900;font-size:30px;text-transform:uppercase;line-height:1}
+.rc-dec{background:var(--ink-3);border:2px solid var(--linha-cl);padding:14px 16px;display:grid;grid-template-columns:34px 1fr;column-gap:10px;row-gap:6px;transition:border-color .25s,transform .25s}
+.rc-dec:hover{border-color:var(--am);transform:translateY(-3px)}
+.rc-dec i{grid-row:1/4;font-style:normal;font-family:var(--titulo);font-weight:900;font-size:28px;color:var(--am);line-height:1}
+.rc-dec b{font-family:var(--titulo);font-weight:900;font-size:23px;text-transform:uppercase;line-height:1.02}
+.rc-dec p{font-size:14.5px;line-height:1.4;opacity:.85}
+.rc-chip{justify-self:start;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(251,187,0,.16);color:var(--am);padding:4px 8px}
+.recomenda .explica{margin-top:16px}
+.cel .rc-cols{grid-template-columns:1fr}
+.cel .rc-inicio{grid-template-columns:40px 1fr}
+.cel .rc-inicio-d{grid-column:2;grid-row:auto;text-align:left}
+.cel .rc-chip,.cel .rc-cab .mono{font-size:13px}
+.rc-dec{flex:1;align-content:start}
+
+/* ===== 09c insight: leitura em fundo escuro (17/11) ===== */
+.insight{background:var(--ink)!important;color:var(--paper)}
+.insight::after{content:'';position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--vm)}
+.insight .in-aspas{color:var(--vm)}
+.insight .in-frase{color:var(--paper)}
+.insight .in-frase em{color:var(--am)}
+.insight .in-c{border-color:rgba(247,241,227,.35);background:rgba(247,241,227,.05)}
+.insight .in-c .mono{color:var(--am);opacity:1;font-weight:700}
+.insight .in-c p{color:var(--paper)}
+.insight .in-c.forte{background:var(--am);border-color:var(--am)}
+.insight .in-c.forte .mono{color:var(--vm-2)}
+.insight .in-c.forte p{color:var(--ink);font-weight:600}
+.insight .in-x path{stroke:var(--vm)}
+.insight .in-seta path{stroke:var(--am)}
+.insight .in-job{color:var(--paper)}
+.insight .in-job b{color:var(--am)}
+.insight .fonte{opacity:.7;color:var(--paper)}
