@@ -602,3 +602,92 @@
 .fim-g{top:170px;grid-template-columns:1fr 620px}
 .fim h2{font-size:110px}
 .fim-latas{width:620px}
+.cap .cap-marcas{position:absolute;left:860px;top:190px;display:flex;align-items:center;gap:20px}
+.cap .cap-marcas img{height:64px}
+.cap .cap-marcas img.l{height:36px}
+.cap .cap-marcas span{font-family:var(--mono);font-weight:700;font-size:22px}
+.cap .cap-txt{top:320px}
+.cel .cap .cap-marcas{position:static;margin:14px 0}
+.cel .cap .cap-marcas img{height:40px}.cel .cap .cap-marcas img.l{height:22px}
+
+/* ===== "Em outras palavras": linha explicativa ===== */
+.explica{display:flex;gap:14px;align-items:center;margin-top:22px;background:var(--branco);border-left:6px solid var(--vm);padding:14px 20px;font-size:17px;line-height:1.42;color:var(--ink);max-width:1440px}
+.explica svg.ico{width:32px;height:32px;color:var(--vm)}
+.explica b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--vm);margin-right:6px}
+.escuro .explica{background:rgba(247,241,227,.08);color:var(--paper);border-left-color:var(--am)}
+.escuro .explica svg.ico,.escuro .explica b{color:var(--am)}
+.gd-exp{font-size:15px;padding:12px 14px}
+
+/* ===== 11b teorias ===== */
+.te-topo{display:flex;justify-content:space-between;align-items:flex-end}
+.teorias h2{font-size:56px;max-width:1150px}
+.te-g{display:grid;grid-template-columns:420px 1fr;gap:34px;margin-top:26px}
+.te-lista{display:flex;flex-direction:column;gap:6px}
+.aba.te-b{display:flex;gap:14px;align-items:center;text-align:left;font-family:var(--titulo);font-weight:900;font-size:21px;letter-spacing:0;padding:10px 14px;background:rgba(247,241,227,.06);color:var(--paper);opacity:.75;border:0}
+.aba.te-b i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--am)}
+.aba.te-b.on{background:var(--am);color:var(--ink);opacity:1}
+.aba.te-b.on i{color:var(--vm-2)}
+.te-c{background:var(--paper);color:var(--ink);padding:30px 34px;min-height:560px;display:flex;flex-direction:column;gap:14px;position:relative}
+.te-c svg.ico{width:58px;height:58px;color:var(--vm)}
+.te-aut{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--vm);font-weight:700;line-height:1.5}
+.te-c h3{font-size:44px;line-height:1.02}
+.te-diz,.te-app{font-size:18px;line-height:1.5}
+.te-app{background:var(--am);padding:14px 18px}
+.te-diz b,.te-app b{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px}
+.te-onde{margin-top:auto;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.6}
+
+/* ===== 11c Ansoff e papel da categoria ===== */
+.an-g{display:grid;grid-template-columns:760px 1fr;gap:60px}
+.ansoff h2{font-size:60px}
+.ansoff .lead{margin:14px 0 22px}
+.matriz{position:relative;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,170px);gap:10px;margin-left:110px;margin-top:40px}
+.mx-y,.mx-x{position:absolute;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vm)}
+.mx-y{left:-110px;top:-28px}.mx-x{left:0;top:-28px;left:auto;right:0}
+.mx-l,.mx-c{position:absolute;font-family:var(--mono);font-size:11px;text-transform:uppercase;opacity:.6}
+.mx-l.l1{left:-80px;top:70px}.mx-l.l2{left:-80px;top:250px}
+.mx-c.c1{left:0;top:-14px;display:none}.mx-c.c2{display:none}
+.q{border:2px solid var(--linha);background:var(--branco);padding:18px 20px;display:flex;flex-direction:column;gap:8px;position:relative;opacity:.45;transform:scale(.92);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),background .6s}
+.q b{font-family:var(--titulo);font-weight:900;font-size:30px;text-transform:uppercase;line-height:1}
+.q span{font-size:15px;line-height:1.4}
+.q i{position:absolute;right:14px;top:14px;font-style:normal;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;background:var(--ink);color:var(--am)}
+.tela.ativa .q,.pdf .q,.cel .q{opacity:.45;transform:none}
+.tela.ativa .q.on,.pdf .q.on,.cel .q.on{opacity:1;background:var(--am);border-color:var(--ink);transition-delay:.7s}
+.tela.ativa .q.q2.on{transition-delay:1s}
+.tela.ativa .q.meio,.pdf .q.meio,.cel .q.meio{opacity:.8;transition-delay:1.2s}
+.an-h{color:var(--vm);font-weight:700;display:block;margin-top:10px;padding-bottom:8px;border-bottom:3px solid var(--ink)}
+.pp-linha{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:16px 0;border-bottom:2px solid var(--linha)}
+.pp-linha svg.ico{width:44px;height:44px;color:var(--vm)}
+.pp-linha b{font-family:var(--titulo);font-weight:900;font-size:30px;text-transform:uppercase;line-height:1}
+.pp-linha span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin:4px 0 6px}
+.pp-linha p{font-size:16px;line-height:1.42}
+.pp-linha.forte{background:var(--ink);color:var(--paper);padding:16px;border:0}
+.pp-linha.forte svg.ico{color:var(--am)}
+
+/* ===== infográficos com movimento contínuo depois de entrar ===== */
+.mk-dois .alto i,.pq-barras .alta i,.pq-barras .baixa i,.gt-b.c,.gt-b.b,.br-reac i.m,.pq-linha i,.res-fio span,.ex-lista li.ex-tot{position:relative;overflow:hidden}
+.mk-dois .alto i::after,.pq-barras .alta i::after,.pq-barras .baixa i::after,.gt-b.c::after,.gt-b.b::after,.br-reac i.m::after,.pq-linha i::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);animation:brilho 3.2s ease-in-out 2s infinite}
+@keyframes brilho{0%{transform:translateX(-120%)}55%,100%{transform:translateX(120%)}}
+.tela.ativa .pontos i.on{animation:pisca 2.8s ease-in-out infinite;animation-delay:calc(2s + var(--k)*25ms)}
+@keyframes pisca{0%,70%,100%{transform:none}35%{transform:scale(.7)}}
+.ca-linha circle.ult{transform-origin:388px 22px;animation:pulsa 1.8s ease-in-out infinite}
+.tela.ativa .mk-anel,.tela.ativa .pq-pizza svg{animation:respira 4s ease-in-out 2s infinite}
+.tela.ativa .gt-m i{animation:pulsa 2.4s ease-in-out infinite}
+.pdf .pontos i,.pdf .ca-linha circle.ult,.pdf .gt-m i,.pdf .mk-anel,.pdf .pq-pizza svg{animation:none!important}
+.pdf [class]::after{animation-play-state:paused}
+
+/* celular */
+.cel .te-g,.cel .an-g{display:grid!important;grid-template-columns:1fr!important}
+.cel .te-lista{display:none}
+.cel .te-c{min-height:0}
+.cel .matriz{margin-left:0;grid-template-rows:auto auto}
+.cel .mx-y,.cel .mx-x,.cel .mx-l,.cel .mx-c{display:none}
+.cel .explica{font-size:15px}
+.mk-n{margin-top:16px}
+.q{padding-right:96px}
+.mx-c{display:block!important;top:-22px!important}
+.mx-c.c1{left:0}.mx-c.c2{left:calc(50% + 5px)}
+.mx-x{top:-46px!important;left:0!important;right:auto!important}
+.mx-y{top:-46px!important;left:-110px!important}
+.matriz{margin-top:64px}
+.cel .mx-c{display:none!important}
+.mx-y{top:30px!important}

@@ -170,3 +170,16 @@ svg.ico use{stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoff
 @keyframes pulsa{50%{transform:scale(1.18);opacity:.2}}
 .pdf .forma,.cel .forma{display:none}
 .pdf svg.ico,.pdf .ic{animation:none!important}
+/* o rótulo da tela não passa por baixo dos botões Sumário e PDF */
+.marcas .eyebrow{margin-right:190px}
+.pdf .marcas .eyebrow,.cel .marcas .eyebrow{margin-right:0}
+
+.tela.visivel{opacity:1;visibility:visible;transform:none;filter:none;transition:none}
+/* cortina com as duas marcas */
+#wipe .wp-b .par-w{display:flex;align-items:center;gap:28px;transform:skewX(14deg);opacity:0}
+#wipe .wp-b .par-w img{height:96px}
+#wipe .wp-b .par-w img.l{height:54px}
+#wipe .wp-b .par-w span{font-family:var(--mono);font-size:28px;font-weight:700}
+#wipe.vai .par-w{animation:marca .86s ease both}
+#wipe.vai.capitulo .par-w{animation:marca 1.1s ease both}
+#wipe .wp-b .par-w img{opacity:1!important;transform:none!important;animation:none!important}

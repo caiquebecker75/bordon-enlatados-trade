@@ -20,6 +20,7 @@ for arq, n, nome, frase, fala in CAPS:
   <section class="tela amarelo cap" data-titulo="Capítulo {n} · {nome}" data-capitulo="{n} · {nome}">
     <div class="marcas"><div class="par"><img class="bd" src="assets/img/logo-bordon.png" alt="Logo Bordon"><span class="x">×</span><img class="lab" src="assets/logos/logo-preto.png" alt="Logo 75 LAB"></div><span class="eyebrow"><b>Capítulo</b> {n} de 04</span></div>
     <div class="cap-num anima">{n}</div>
+    <div class="cap-marcas anima"><img src="assets/img/logo-bordon.png" alt="Logo Bordon"><span>×</span><img class="l" src="assets/logos/logo-preto.png" alt="Logo 75 LAB"></div>
     <div class="cap-txt">
       <h2 class="anima d1">{nome}</h2>
       <p class="lead anima d2">{frase}</p>

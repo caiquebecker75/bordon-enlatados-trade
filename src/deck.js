@@ -51,20 +51,26 @@
     if(atual<0||modoPdf||html.classList.contains('cel')||matchMedia('(prefers-reduced-motion:reduce)').matches){troca(n);return;}
     trocando=true;const cap=telas[n].classList.contains('cap');
     wipe.classList.remove('vai','capitulo');void wipe.offsetWidth;wipe.classList.toggle('capitulo',cap);wipe.classList.add('vai');stage.classList.add('cine');
-    setTimeout(()=>{troca(n);},cap?520:380);
-    setTimeout(()=>{wipe.classList.remove('vai');stage.classList.remove('cine');trocando=false;},cap?1150:860);
+    const cobre=cap?520:380,sai=cap?1150:860;
+    setTimeout(()=>{troca(n,sai-cobre-120);},cobre);
+    setTimeout(()=>{wipe.classList.remove('vai');stage.classList.remove('cine');trocando=false;},sai);
   }
-  function troca(n){
+  /* espera: a tela aparece por baixo da cortina e só começa a animar quando a cortina sai, para os infográficos serem vistos */
+  function troca(n,espera){
     const ant=atual>=0?telas[atual]:null;
-    if(ant){ant.classList.remove('ativa');ant.classList.add('saindo');setTimeout(()=>ant.classList.remove('saindo'),700);}
-    atual=n;const t=telas[n];t.classList.add('ativa');
+    if(ant){ant.classList.remove('ativa','visivel');ant.classList.add('saindo');setTimeout(()=>ant.classList.remove('saindo'),700);}
+    atual=n;const t=telas[n];
+    if(espera>0){t.classList.add('visivel');setTimeout(()=>{if(atual===n)entra(t);},espera);}else entra(t);
     prog.style.width=((n+1)/total*100)+'%';cont.textContent=dd(n+1)+' / '+dd(total);
     $('#ant').disabled=n===0;$('#prox').disabled=n===total-1;
-    html.dataset.fundo=t.classList.contains('escuro')||t.classList.contains('capa')?'escuro':(t.classList.contains('amarelo')?'amarelo':'claro');
-    t.querySelectorAll('[data-conta]').forEach(el=>{if(!el.closest('.painel'))contar(el);});
-    iniciaTimers(t);
+    html.dataset.fundo=t.classList.contains('escuro')||t.classList.contains('capa')||t.classList.contains('q-tema-escuro')||t.classList.contains('vermelho')?'escuro':(t.classList.contains('amarelo')?'amarelo':'claro');
     $$('#sumLista button').forEach(b=>b.classList.toggle('atual',+b.dataset.i===n));
     history.replaceState(null,'','#'+(n+1));mostrarFala();
+  }
+  function entra(t){
+    t.classList.remove('visivel');t.classList.add('ativa');
+    t.querySelectorAll('[data-conta]').forEach(el=>{if(!el.closest('.painel'))contar(el);});
+    iniciaTimers(t);
   }
   function mostrarFala(){const r=telas[atual].querySelector('aside.roteiro');fala.textContent=r?r.textContent.trim():'';fala.classList.toggle('on',verFala&&!!fala.textContent);}
 
