@@ -14,7 +14,7 @@ P = [  # chave, grupo, nome, resolve, principal, vistas, especificações, texto
  ('balcao', 'pesada', 'Balcão de degustação', 'Ser provada', 'balcao-v0.webp', ['balcao-v1', 'balcao-v2'],
   [('Medida', '70 x 53 cm · tampo a 95 cm · 2,20 m'), ('Material', 'Frente em PS calandrado, tubos e testeira em faca'), ('Uso', 'Indução, panela, copinhos e latas no tampo'), ('Canal', 'Fim de semana nas lojas grandes')],
   '"Esquentou, provou." A frente curva leva o KV inteiro, a testeira em faca com o logo Bordon fica acima da cabeça do promotor e o tampo comporta a degustação completa.'),
- ('display', 'media', 'Display de balcão gravitacional', 'Ser escolhida', 'display-v0.webp', ['display-v1', 'display-v2', 'display-v3'],
+ ('display', 'media', 'Display de balcão gravitacional', 'Ser escolhida', 'display-anim.webp', ['display-v0', 'display-v1', 'display-v2', 'display-v3'],
   [('Medida', '26 x 46 x 39 cm'), ('Material', 'Aramado amarelo e PS frontal removível'), ('Capacidade', '20 latas em 2 frentes'), ('Canal', 'Checkout e vizinhança')],
   'As latas descem por gravidade: tirou uma, a próxima já está na frente. O abastecimento é por cima e a comunicação troca sem ferramenta, só levantando o PS.'),
  ('clip', 'media', 'Clip strip de cross', 'Ser lembrada', 'clip-giro.webp', ['clip-v1', 'clip-v2'],
