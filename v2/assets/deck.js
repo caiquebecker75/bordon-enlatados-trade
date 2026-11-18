@@ -134,14 +134,14 @@
     /* vapor realista: texturas de fumaça (ruído fractal com curvas) sobem, crescem, ondulam e se dissolvem, sobrepostas */
     var ctx=cv.getContext('2d'), W=cv.width, H=cv.height, raf=0, ps=[], last=0, prox=0;
     var spr=[0,1,2,3].map(function(k){var im=new Image(); im.src='assets/kv/fumaca-'+k+'.png'; return im;});
-    var CX=260, CY=455;
-    function nova(t){return {t0:t, dur:5200+Math.random()*2600, im:spr[(Math.random()*4)|0], x:CX+(Math.random()-.5)*190, rot0:(Math.random()-.5)*0.25, drot:(Math.random()-.5)*0.35,
-      s0:0.35+Math.random()*0.15, s1:0.95+Math.random()*0.45, sw:12+Math.random()*22, fs:0.6+Math.random()*0.8, fl:Math.random()<.5?-1:1, a:0.16+Math.random()*0.1};}
+    var CX=260, CY=500;
+    function nova(t){return {t0:t, dur:5200+Math.random()*2600, im:spr[(Math.random()*4)|0], x:CX+(Math.random()-.5)*230, rot0:(Math.random()-.5)*0.25, drot:(Math.random()-.5)*0.35,
+      s0:0.28+Math.random()*0.1, s1:0.62+Math.random()*0.22, sw:12+Math.random()*22, fs:0.6+Math.random()*0.8, fl:Math.random()<.5?-1:1, a:0.42+Math.random()*0.16};}
     function passo(t){
       if(t>prox){ps.push(nova(t)); prox=t+520+Math.random()*420;}
       ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation='lighter';
       for(var i=ps.length-1;i>=0;i--){var p=ps[i], k=(t-p.t0)/p.dur; if(k>=1){ps.splice(i,1); continue;}
-        var e=1-Math.pow(1-k,1.6), s=p.s0+(p.s1-p.s0)*e, y=CY-e*380, x=p.x+Math.sin(k*Math.PI*p.fs*2)*p.sw*k;
+        var e=1-Math.pow(1-k,1.6), s=p.s0+(p.s1-p.s0)*e, y=CY-e*170, x=p.x+Math.sin(k*Math.PI*p.fs*2)*p.sw*k;
         var al=p.a*Math.sin(Math.PI*Math.min(1,k*1.15))*(k<0.12?k/0.12:1);
         if(!p.im.complete) continue;
         ctx.save(); ctx.globalAlpha=al; ctx.translate(x,y); ctx.rotate(p.rot0+p.drot*k); ctx.scale(s*p.fl,s);

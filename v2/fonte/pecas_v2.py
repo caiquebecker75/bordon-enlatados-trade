@@ -20,6 +20,9 @@ P = [  # chave, grupo, nome, resolve, principal, vistas, especificações, texto
  ('clip', 'media', 'Clip strip de cross', 'Ser lembrada', 'clip-giro.webp', ['clip-v1', 'clip-v2'],
   [('Medida', '27 x 120 cm'), ('Material', 'PS 2 mm com ilhós e bolsos de acrílico'), ('Capacidade', '4 sachês de bolonhesa'), ('Canal', 'Corredor de massas e molhos')],
   'Leva a bolonhesa para perto do macarrão. Os sachês ficam em bolsos de acrílico colados na peça, sem amassar a embalagem, e o clip strip pendura no ilhós.'),
+ ('faixas', 'media', 'Faixas por ocasião', 'Ser lembrada', 'faixas-leque.webp', ['faixas-v1', 'faixas-v2'],
+  [('Medida', '40 x 4 cm, 3 por prateleira'), ('Material', 'PS 1 mm na canaleta de preço'), ('Ocasiões', 'Dia a dia, jantar a dois, petiscar, família, domingo'), ('Canal', 'Todos')],
+  'Cinco cores, cinco momentos de consumo. A faixa diz para quando é a lata antes de o shopper ler o rótulo.'),
  ('modulo', 'media', 'Testeira e faixas por ocasião', 'Ser vista', 'modulo-v0.webp', ['modulo-v1', 'modulo-v2', 'modulo-v3'],
   [('Medida', 'Testeira 124 x 47 cm · faixas 40 x 4 cm'), ('Material', 'Testeira em PS com faca, faixas em PS 1 mm'), ('Planograma', '5 ocasiões, uma por prateleira'), ('Canal', 'Gôndola de mercearia')],
   'A gôndola vira o cardápio da semana: cada prateleira é uma ocasião, com a sua cor. A testeira assina o bloco e o adesivo no chão puxa o shopper do corredor.'),
@@ -32,9 +35,6 @@ P = [  # chave, grupo, nome, resolve, principal, vistas, especificações, texto
  ('precificador', 'leve', 'Precificador', 'Ser escolhida', 'precificador-v0.webp', ['precificador-v1', 'precificador-v2', 'precificador-v3'],
   [('Medida', '33 x 16 cm'), ('Material', 'PS 1 mm com aba de encaixe'), ('Uso', 'Moldura da etiqueta de preço'), ('Canal', 'Todos')],
   'A aba cortada encaixa na canaleta e a janela emoldura a etiqueta de preço da loja: o preço ganha a marca, sem trocar a etiqueta.'),
- ('faixas', 'leve', 'Faixas por ocasião', 'Ser lembrada', 'faixas-leque.webp', ['faixas-v1', 'faixas-v2'],
-  [('Medida', '40 x 4 cm, 3 por prateleira'), ('Material', 'PS 1 mm na canaleta de preço'), ('Ocasiões', 'Dia a dia, jantar a dois, petiscar, família, domingo'), ('Canal', 'Todos')],
-  'Cinco cores, cinco momentos de consumo. A faixa diz para quando é a lata antes de o shopper ler o rótulo.'),
 ]
 N0 = 12          # índice da primeira tela de peça (0 = capa)
 NV = N0 + len(P) # índice da tela com todas as peças

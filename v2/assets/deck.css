@@ -1264,6 +1264,7 @@ svg.ico use{stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoff
 .pc-3d .peca[data-ir]{cursor:pointer}
 .cel .peca1 .p1-midia,.cel .peca1 .p1-thumbs,.cel .peca1 .p1-info{position:static;width:100%}
 .cel .peca1 .p1-midia{height:70vw}
+.pecas-t .pc-grupos{grid-template-columns:3fr 4fr 3fr}
 
 /* ===== celular e tablet estreito: telas empilhadas, sem escala e sem rolagem lateral ===== */
 html.cel,html.cel body{height:auto;overflow-x:hidden;overflow-y:auto;background:var(--paper)}
