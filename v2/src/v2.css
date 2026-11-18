@@ -1,0 +1,42 @@
+
+/* ===== v2 (18/11/2026): capa nova com fumaça, KV antes e depois, appeals em loop ===== */
+.capa2{background:var(--am)}
+.capa2 .foto{left:0;width:1600px;height:900px;object-position:center center}
+.capa2 .fumaca{position:absolute;left:850px;top:-60px;width:520px;height:560px;pointer-events:none;filter:blur(7px);mix-blend-mode:screen;opacity:.95}
+.capa2 .texto{left:72px;bottom:120px;width:520px}
+.capa2 .eyebrow{color:var(--vm-2)}
+.capa2 .eyebrow b{color:var(--vm)}
+.capa2 h1{color:#fff;text-shadow:0 3px 0 rgba(150,60,0,.18)}
+.capa2 h1 em{color:var(--vm)!important;text-shadow:none}
+.capa2 .lead{color:var(--ink);opacity:1;font-weight:500}
+.capa2 .botao{color:var(--vm);border-color:var(--vm)}
+.capa2 .marcas .x{color:var(--ink)}
+
+.kvevo{background:var(--paper)}
+.kvevo h2{font-size:56px;max-width:1400px;white-space:nowrap}
+.kvevo h2 em{color:var(--vm)}
+.kvevo .ev-g{position:absolute;left:0;right:0;top:110px;display:grid;grid-template-columns:1fr 56px 1.35fr;align-items:center;gap:18px}
+.kvevo figure{position:relative;margin:0}
+.kvevo figure img{width:100%;height:auto;box-shadow:0 18px 40px rgba(27,10,7,.18)}
+.kvevo .ev-antes img{filter:saturate(.75) brightness(.97)}
+.kvevo .ev-tag{position:absolute;top:-30px;left:0;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.kvevo .ev-depois .ev-tag{color:var(--vm);font-weight:700}
+.kvevo .ev-seta svg{width:44px;height:44px;color:var(--vm)}
+.kvevo .pt{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--vm);color:#fff;font:700 16px/34px var(--mono);text-align:center;font-style:normal;box-shadow:0 0 0 5px rgba(222,39,31,.25);animation:kvpulso 2.2s ease-in-out infinite}
+@keyframes kvpulso{50%{box-shadow:0 0 0 11px rgba(222,39,31,.08)}}
+.kvevo .ev-pontos{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;list-style:none}
+.kvevo .ev-pontos li{border-top:3px solid var(--vm);padding-top:12px}
+.kvevo .ev-pontos b{display:flex;align-items:center;gap:10px;font-size:19px;margin-bottom:6px}
+.kvevo .ev-pontos b i{font:700 13px/26px var(--mono);font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--vm);color:#fff;text-align:center}
+.kvevo .ev-pontos span{font-size:15px;line-height:1.4;opacity:.85}
+
+.kvgif{background:var(--ink)}
+.kvgif .kg-pilha{position:absolute;inset:0}
+.kvgif .kg-pilha img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.03);transition:opacity .9s ease,transform 2.6s ease}
+.kvgif .kg-pilha img.on{opacity:1;transform:none}
+.kvgif .kg-leg{position:absolute;right:56px;bottom:46px;background:rgba(27,10,7,.72);padding:10px 16px;color:var(--paper)}
+.kvgif .kg-leg .eyebrow b{color:var(--am)}
+.cel .capa2 .fumaca{display:none}
+.cel .kvevo .ev-g{position:static;grid-template-columns:1fr;margin-top:18px}.cel .kvevo .ev-seta{display:none}
+.cel .kvevo .ev-pontos{position:static;grid-template-columns:1fr 1fr;margin-top:18px}
+.cel .kvgif .kg-pilha{position:relative;height:56vw}
