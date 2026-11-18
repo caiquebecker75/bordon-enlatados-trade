@@ -131,28 +131,24 @@
   }
   var capa=document.querySelector('.capa2'), cv=capa&&capa.querySelector('.fumaca');
   if(cv){
-    /* vapor em fios: partículas finas que sobem com turbulência suave, alongadas e quase transparentes */
-    var ctx=cv.getContext('2d'), W=cv.width, H=cv.height, ps=[], raf=0, T=0;
-    var CX=260, CY=430, RB=135;
-    function campo(x,y,t){return Math.sin(y*0.021+t*0.9)*0.55+Math.sin(y*0.047-t*1.4+x*0.01)*0.35+Math.sin(x*0.03+t*0.6)*0.2;}
-    function nova(){var a=Math.random()*6.2832, r=Math.sqrt(Math.random())*RB;
-      return {x:CX+Math.cos(a)*r, y:CY+Math.sin(a)*r*.42, vy:-(0.45+Math.random()*0.5), w:3+Math.random()*4, vida:0, max:170+Math.random()*190, s:0.6+Math.random()*0.8};}
-    function passo(){
-      T+=0.016; ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation='lighter';
-      for(var n=0;n<4;n++) if(ps.length<420) ps.push(nova());
-      for(var i=ps.length-1;i>=0;i--){var p=ps[i]; p.vida++;
-        var k=p.vida/p.max; if(k>=1){ps.splice(i,1); continue;}
-        var vx=campo(p.x,p.y,T)*p.s*(0.4+k*1.6);
-        p.x+=vx; p.y+=p.vy*(1+k*0.6); p.w+=0.06;
-        var al=Math.sin(Math.PI*k)*0.13*(1-k*0.4);
-        var len=6+k*14, ang=Math.atan2(p.vy,vx);
-        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(ang+Math.PI/2);
-        var g=ctx.createRadialGradient(0,0,0,0,0,len);
-        g.addColorStop(0,'rgba(255,255,255,'+al+')'); g.addColorStop(1,'rgba(255,255,255,0)');
-        ctx.fillStyle=g; ctx.scale(p.w/len,1); ctx.beginPath(); ctx.arc(0,0,len,0,6.2832); ctx.fill(); ctx.restore();}
+    /* vapor realista: texturas de fumaça (ruído fractal com curvas) sobem, crescem, ondulam e se dissolvem, sobrepostas */
+    var ctx=cv.getContext('2d'), W=cv.width, H=cv.height, raf=0, ps=[], last=0, prox=0;
+    var spr=[0,1,2,3].map(function(k){var im=new Image(); im.src='assets/kv/fumaca-'+k+'.png'; return im;});
+    var CX=260, CY=455;
+    function nova(t){return {t0:t, dur:5200+Math.random()*2600, im:spr[(Math.random()*4)|0], x:CX+(Math.random()-.5)*190, rot0:(Math.random()-.5)*0.25, drot:(Math.random()-.5)*0.35,
+      s0:0.35+Math.random()*0.15, s1:0.95+Math.random()*0.45, sw:12+Math.random()*22, fs:0.6+Math.random()*0.8, fl:Math.random()<.5?-1:1, a:0.16+Math.random()*0.1};}
+    function passo(t){
+      if(t>prox){ps.push(nova(t)); prox=t+520+Math.random()*420;}
+      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation='lighter';
+      for(var i=ps.length-1;i>=0;i--){var p=ps[i], k=(t-p.t0)/p.dur; if(k>=1){ps.splice(i,1); continue;}
+        var e=1-Math.pow(1-k,1.6), s=p.s0+(p.s1-p.s0)*e, y=CY-e*380, x=p.x+Math.sin(k*Math.PI*p.fs*2)*p.sw*k;
+        var al=p.a*Math.sin(Math.PI*Math.min(1,k*1.15))*(k<0.12?k/0.12:1);
+        if(!p.im.complete) continue;
+        ctx.save(); ctx.globalAlpha=al; ctx.translate(x,y); ctx.rotate(p.rot0+p.drot*k); ctx.scale(s*p.fl,s);
+        ctx.drawImage(p.im,-160,-470,320,512); ctx.restore();}
       raf=requestAnimationFrame(passo);
     }
-    quandoAtiva(capa,function(){ps=[]; for(var i=0;i<300;i++){var p=nova(); p.vida=Math.random()*p.max*.9; for(var q=0;q<p.vida;q+=3){p.y+=p.vy*3; p.x+=campo(p.x,p.y,0)*p.s*1.2;} ps.push(p);} raf=requestAnimationFrame(passo);},
+    quandoAtiva(capa,function(){var t=performance.now(); ps=[]; for(var i=0;i<9;i++){var p=nova(t-i*650); ps.push(p);} prox=t; raf=requestAnimationFrame(passo);},
                      function(){cancelAnimationFrame(raf); ctx.clearRect(0,0,W,H);});
   }
   var gif=document.querySelector('.kvgif');
@@ -162,3 +158,10 @@
                     function(){clearInterval(tm);});
   }
 })();
+
+/* v2.2: miniaturas das telas de peça trocam a imagem principal */
+document.querySelectorAll('.peca1').forEach(function(sec){
+  var main=sec.querySelector('.p1-main');
+  sec.querySelectorAll('.p1-th').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();
+    sec.querySelectorAll('.p1-th').forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); main.src=b.dataset.src;});});
+});

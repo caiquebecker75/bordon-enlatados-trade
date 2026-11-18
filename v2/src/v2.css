@@ -2,7 +2,7 @@
 /* ===== v2 (18/11/2026): capa nova com fumaça, KV antes e depois, appeals em loop ===== */
 .capa2{background:var(--am)}
 .capa2 .foto{left:0;width:1600px;height:900px;object-position:center center}
-.capa2 .fumaca{position:absolute;left:850px;top:-60px;width:520px;height:560px;pointer-events:none;filter:blur(2.2px);mix-blend-mode:screen}
+.capa2 .fumaca{position:absolute;left:850px;top:-60px;width:520px;height:560px;pointer-events:none;filter:blur(.6px);mix-blend-mode:screen}
 .capa2 .texto{left:72px;bottom:120px;width:520px}
 .capa2 .eyebrow{color:var(--vm-2)}
 .capa2 .eyebrow b{color:var(--vm)}
@@ -46,4 +46,27 @@
 .pc-3d .peca .arte.a-3d img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(27,10,7,.25))}
 .pc-3d .peca h3{font-size:19px;line-height:1.05}
 .ativacao .at-img.at-balcao{object-fit:contain;background:radial-gradient(ellipse at 50% 45%,#fff6dc 0%,#efe2bf 70%);padding:14px}
-.plataforma .pl-selos img.selo-novo{height:86px;width:auto}
+.plataforma .pl-selos img.selo-novo{height:92px;width:auto;animation:selopulsa 2.8s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes selopulsa{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.07) rotate(-2deg)}}
+
+/* v2.2: uma tela por peça */
+.peca1{background:var(--ink)}
+.peca1 .p1-midia{position:absolute;left:0;top:0;width:900px;height:640px;background:radial-gradient(ellipse at 50% 45%,#fff6dc 0%,#f0e2bd 58%,#cdb98d 100%);display:grid;place-items:center;overflow:hidden}
+.peca1 .p1-main{position:absolute;left:4%;top:3%;width:92%;height:94%;object-fit:contain;filter:drop-shadow(0 14px 18px rgba(27,10,7,.28))}
+.peca1 .p1-thumbs{position:absolute;left:0;top:656px;display:flex;gap:10px}
+.peca1 .p1-th{width:96px;height:64px;background:#efe2bf;border:2px solid transparent;padding:3px;cursor:pointer}
+.peca1 .p1-th img{width:100%;height:100%;object-fit:contain}
+.peca1 .p1-th.on{border-color:var(--am)}
+.peca1 .p1-info{position:absolute;left:950px;right:0;top:0;bottom:0;display:flex;flex-direction:column}
+.peca1 .p1-gr{margin-bottom:22px}
+.peca1 .p1-n{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--am)}
+.peca1 h2{font-size:64px;line-height:.95;margin:8px 0 16px}
+.peca1 .p1-res{align-self:flex-start;background:var(--am);color:var(--ink);font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px}
+.peca1 .p1-txt{font-size:18px;line-height:1.45;margin:20px 0 18px;opacity:.92}
+.peca1 .p1-dl{display:grid;grid-template-columns:120px 1fr;border-top:1px solid var(--linha-cl)}
+.peca1 .p1-dl dt,.peca1 .p1-dl dd{padding:9px 0;border-bottom:1px solid var(--linha-cl);font-size:14px}
+.peca1 .p1-dl dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--am);padding-top:12px}
+.peca1 .p1-todas{margin-top:auto;align-self:flex-start}
+.pc-3d .peca[data-ir]{cursor:pointer}
+.cel .peca1 .p1-midia,.cel .peca1 .p1-thumbs,.cel .peca1 .p1-info{position:static;width:100%}
+.cel .peca1 .p1-midia{height:70vw}
